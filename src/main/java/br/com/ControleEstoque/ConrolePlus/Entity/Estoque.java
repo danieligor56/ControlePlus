@@ -1,5 +1,7 @@
 package br.com.ControleEstoque.ConrolePlus.Entity;
 
+import org.hibernate.annotations.GeneratorType;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -16,9 +18,9 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-@Table(name = "Produto")
+@Table(name = "Estoque")
 
-public class Product {
+public class Estoque {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -28,19 +30,4 @@ public class Product {
 	@Column(name = "NOME",nullable = false,unique = true)
 	private String nome;
 	
-	@Column(name = "DESCRIÇÃO",nullable = false)
-	private String descricao;
-	
-	@Column(name = "CdbIte",nullable = true,unique = true)
-	private Long VcodBarra;
-	
-	@Column(name = "prcIte",nullable = true)
-	private Double prcIVte;
-	
-	@Column(name = "qtdIte",nullable = false)
-	private int qtdIte;
-
-
 }
-
- 

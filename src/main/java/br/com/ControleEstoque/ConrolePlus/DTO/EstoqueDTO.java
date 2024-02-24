@@ -11,7 +11,6 @@ import lombok.Setter;
 @AllArgsConstructor
 public class EstoqueDTO {
 	
-	private Long idL;
 	private String nome;
 	
 

@@ -21,9 +21,9 @@ import lombok.Setter;
 public class Estoque {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID",nullable = false,unique = true)
-	private long id;
+	private Long id;
 	
 	@Column(name = "NOME",nullable = false,unique = true)
 	private String nome;

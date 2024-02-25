@@ -2,6 +2,7 @@ package br.com.ControleEstoque.ConrolePlus.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +20,12 @@ EstoqueService estoqueService;
 	public ResponseEntity<Estoque> adicionaNovoEstoque(@RequestBody EstoqueDTO estoqueDTO){
 		estoqueService.criaNovoEstoque(estoqueDTO);
 		return ResponseEntity.ok().build();
+	}
+	
+	@DeleteMapping("/deletarEstoque")
+		public ResponseEntity<Estoque> deletarEstoque(Long id){
+		estoqueService.deletarEstoque(id);
+		return ResponseEntity.ok(null);
 	}
 
 }

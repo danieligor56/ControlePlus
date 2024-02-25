@@ -15,16 +15,21 @@ public class EstoqueService {
 	
 	@Autowired
 	ModelMapper modelMapper;
-		
-	EstoqueRepository estoqueRepository;
 	
+	@Autowired
+	EstoqueRepository estoqueRepository;
 	
 	public Estoque criaNovoEstoque(EstoqueDTO estoqueDTO) {
 	Estoque novoEstoque = modelMapper.map(estoqueDTO, Estoque.class);
 	estoqueRepository.save(novoEstoque);
 	return null;
 	
+	}
 	
+//DELETAR ESTOQUE
+	
+	public void deletarEstoque(long id) {
+		estoqueRepository.deleteById(id);
 	}
 
 }

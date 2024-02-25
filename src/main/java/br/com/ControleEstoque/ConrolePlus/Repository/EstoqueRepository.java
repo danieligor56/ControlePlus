@@ -7,5 +7,7 @@ import br.com.ControleEstoque.ConrolePlus.Entity.Estoque;
 
 @Repository
 public interface EstoqueRepository extends JpaRepository<Estoque, Long>{
-
+	
+	Estoque deleteById(long id);
+	
 }
